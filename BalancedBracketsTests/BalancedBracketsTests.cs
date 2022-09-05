@@ -67,15 +67,21 @@ namespace BalancedBracketsTests
         }
 
         [TestMethod]
-        public void StringWithFlipFlopBracketsReturnsFalse()
+        public void StringWithTwoSetsOfBracketsReturnsTrue()
         {
-            Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("[][blah b]lah i'm a string"));
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[][blah b]lah i'm a string"));
         }
 
         [TestMethod]
         public void StringWithOneBracketReturnsFalse()
         {
             Assert.IsFalse(BalancedBrackets.HasBalancedBrackets("blah b]lah i'm a string"));
+        }
+
+        [TestMethod]
+        public void WonkyMatchingBracketsReturnsTrue()
+        {
+            Assert.IsTrue(BalancedBrackets.HasBalancedBrackets("[[][[]]]"));
         }
     }
 }
